@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <header class="header">
+            <div class="img_cont"> </div>
+            <div class="Port_name">
+                <p class="headerN">"Zephal"</p>
+                <p class="subN">Braulio Rios.</p>
+            </div>
+        </header>
+    </section>
+</body>
+
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        font-family: 'fuente', sans-serif;
+    }
+
+    @font-face {
+        font-family: "fuente";
+        src: url('/fonts/DelaGothicOne-Regular.ttf');
+        font-weight: normal;
+        /* Opcional, solo si es necesario */
+        font-style: normal;
+    }
+
+    .img_cont {
+        min-width: 200px;
+        min-height: 200px;
+        position: relative;
+        background-image: url('../imgs/desvelada.png');
+        /* Imagen inicial */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image 0.1s ease-in-out;
+        border-radius: 15px;
+    }
+
+    .img_cont:hover {
+        background-image: url('../imgs/braulio.jpg');
+        /* border-radius: 15px; */
+        /* Imagen que se muestra al pasar el mouse */
+    }
+
+    .header {
+        display: flex;
+        background-color: #1e2124;
+        width: 80vh;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    section {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* padding: 20px; */
+    }
+
+    .Port_name {
+        display: flex;
+        flex-direction: column;
+        align-self: self-start;
+        background-color: #424549;
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .headerN {
+        font-size: 24px;
+        transition: all .1s ease-in;
+    }
+
+    .Port_name:hover .headerN {
+        color: #7289da;
+    }
+
+    .subN {
+        font-size: 14px;
+        color: #858585;
+    }
+
+    .Port_name p {
+        margin: 0;
+    }
+</style>
+
+<script>
+</script>
