@@ -20,19 +20,19 @@
 
 <body>
 
-    <audio  src="warframe.mp3" id="myAudio" autoplay loop >
-      </audio>
-      
-      <!-- <button onclick="document.getElementById('myAudio').play()">Reproducir Audio</button> -->
-      
-      <script>
-        window.onbeforeunload  = function() {
-          var audio = document.getElementById('myAudio');
-          audio.play().catch(function(error) {
-            console.log("El autoplay ha sido bloqueado por el navegador: " + error);
-          });
+    <audio src="warframe.mp3" id="myAudio" autoplay loop>
+    </audio>
+
+    <!-- <button onclick="document.getElementById('myAudio').play()">Reproducir Audio</button> -->
+
+    <script>
+        window.onload = function () {
+            var audio = document.getElementById('myAudio');
+            audio.play().catch(function (error) {
+                console.log("El autoplay ha sido bloqueado por el navegador: " + error);
+            });
         };
-      </script>
+    </script>
 
     <div>
         <div class="wave"></div>
@@ -42,22 +42,23 @@
 
     <section class="mainp">
         <header class="header">
-            <ul class="socials">
-                <li>
-                    <i onclick="youtubeLink()" class="icon fa-brands fa-youtube"></i>
-                </li>
-                <li>
-                    <i onclick="discordLink()" class="icon fa-brands fa-discord"></i>
-                </li>
-                <li>
-                    <i onclick="tiktokLink()" class="icon fa-brands fa-tiktok"></i>
-                </li>
-                <li>
-                    <i onclick="instagramLink()" class="icon fa-brands fa-square-instagram"></i>
-                </li>
-            </ul>
-            <div class="img_cont">
-            </div>
+
+                <ul class="socials">
+                    <li>
+                        <i onclick="youtubeLink()" class="icon fa-brands fa-youtube"></i>
+                    </li>
+                    <li>
+                        <i onclick="discordLink()" class="icon fa-brands fa-discord"></i>
+                    </li>
+                    <li>
+                        <i onclick="tiktokLink()" class="icon fa-brands fa-tiktok"></i>
+                    </li>
+                    <li>
+                        <i onclick="instagramLink()" class="icon fa-brands fa-square-instagram"></i>
+                    </li>
+                </ul>
+                <div class="img_cont">
+                </div>
 
             <div class="Port_name">
                 <p class="headerN">Zephal <span class="subN">Braulio Rios</span> </p>
@@ -202,12 +203,12 @@
         /* margin: 5px; */
         /* word-break:break-; */
         height: fit-content;
-        min-width:10px;
+        min-width: 10px;
         /* Define el ancho del contenedor */
         overflow: hidden;
         /* Oculta el contenido que se desborda */
         /* white-space: ; */
-        white-space:collapse;
+        white-space: collapse;
         /* Impide que el texto se ajuste a múltiples líneas */
         text-overflow: ellipsis;
     }
