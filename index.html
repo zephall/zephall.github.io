@@ -20,10 +20,20 @@
 
 <body>
 
-    <audio autoplay loop>
-        <source src="sounds/warframe.mp3" type="audio/mp3">
-        Tu navegador no soporta el elemento de audio.
+    <audio id="myAudio" autoplay loop >
+        <source src="warframe.mp3" type="audio/mp3">
       </audio>
+      
+      <!-- <button onclick="document.getElementById('myAudio').play()">Reproducir Audio</button> -->
+      
+      <script>
+        window.onload = function() {
+          var audio = document.getElementById('myAudio');
+          audio.play().catch(function(error) {
+            console.log("El autoplay ha sido bloqueado por el navegador: " + error);
+          });
+        };
+      </script>
 
     <div>
         <div class="wave"></div>
@@ -51,8 +61,8 @@
             </div>
 
             <div class="Port_name">
-                <p class="headerN">Zephal</p>
-                <p class="subN">Braulio Rios.</p>
+                <p class="headerN">Zephal <span class="subN">Braulio Rios</span> </p>
+                <!-- <p class="subN">Braulio Rios.</p> -->
                 <p class="descN">Tecnico informatico que disfruta de programar, dibujar, escuchar musica, hacer
                     videos
                     para youtube y otras cosas aburridas </p>
@@ -63,7 +73,10 @@
     </section>
 
     <section>
-        <div>
+        <div class="cont1">
+
+        </div>
+        <div class="cont2">
 
         </div>
     </section>
@@ -157,6 +170,7 @@
         color: #fff;
         border-radius: 10px;
         gap: 5px;
+        /* align-items:normal; */
     }
 
     .headerN {
@@ -173,7 +187,7 @@
     }
 
     .subN {
-        font-size: 14px;
+        font-size: 10px;
         color: #858585;
         background-color: #424549;
         padding: 5px;
