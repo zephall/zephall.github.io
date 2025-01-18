@@ -20,45 +20,29 @@
 
 <body>
 
-    <audio src="warframe.mp3" id="myAudio" autoplay loop>
-    </audio>
-
-    <!-- <button onclick="document.getElementById('myAudio').play()">Reproducir Audio</button> -->
-
-    <script>
-        window.onload = function () {
-            var audio = document.getElementById('myAudio');
-            audio.play().catch(function (error) {
-                console.log("El autoplay ha sido bloqueado por el navegador: " + error);
-            });
-        };
-    </script>
-
-    <div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
 
     <section class="mainp">
         <header class="header">
 
-                <ul class="socials">
-                    <li>
-                        <i onclick="youtubeLink()" class="icon fa-brands fa-youtube"></i>
-                    </li>
-                    <li>
-                        <i onclick="discordLink()" class="icon fa-brands fa-discord"></i>
-                    </li>
-                    <li>
-                        <i onclick="tiktokLink()" class="icon fa-brands fa-tiktok"></i>
-                    </li>
-                    <li>
-                        <i onclick="instagramLink()" class="icon fa-brands fa-square-instagram"></i>
-                    </li>
-                </ul>
-                <div class="img_cont">
-                </div>
+            <ul class="socials">
+                <li>
+                    <i onclick="youtubeLink()" class="icon fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                    <i onclick="discordLink()" class="icon fa-brands fa-discord"></i>
+                </li>
+                <li>
+                    <i onclick="tiktokLink()" class="icon fa-brands fa-tiktok"></i>
+                </li>
+                <li>
+                    <i onclick="instagramLink()" class="icon fa-brands fa-square-instagram"></i>
+                </li>
+            </ul>
+            <div class="img_cont">
+            </div>
 
             <div class="Port_name">
                 <p class="headerN">Zephal <span class="subN">Braulio Rios</span> </p>
@@ -69,15 +53,70 @@
                 <p class="maestria neon"> <i onclick="warframePerfil()" class="warframeLogo neon-image"></i>
                     Maestria 8 </p>
             </div>
+
         </header>
-    </section>
+        <div class="iniciodeport">
 
-    <section>
-        <div class="cont1">
 
-        </div>
-        <div class="cont2">
+            <div class="sidebard">
+                <div class="audio-player">
+                    <h3>El soundtrack de mi vida</h3>
+                    <audio id="audio" src="warframe.mp3"></audio>
 
+                    <div class="controls">
+                        <button class="play-btn" id="playBtn"><i class="fa-solid fa-play"></i></button>
+                        <button class="pause-btn" id="pauseBtn" style="display:none;"><i
+                                class="fa-solid fa-pause"></i></button>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portafolio">
+
+                <div class="card mb-3">
+                    <h3 class="card-header">Card header</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200"
+                        aria-label="Placeholder: Image cap" focusable="false" role="img"
+                        preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180"
+                        style="font-size:1.125rem;text-anchor:middle">
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                    </svg>
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 </body>
@@ -86,15 +125,36 @@
 
 <style>
     body {
+        /* background-color: #ff4500; */
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: 100%;
         position: absolute;
+        overflow: hidden;
         font-family: 'fuente', sans-serif;
+        /* overflow-y: scroll; */
     }
 
     .mainp {
         display: block;
+        overflow: visible;
         position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .iniciodeport {
+        display: flex;
+        position: relative;
+        gap: 5px;
+        margin-top: 10px;
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+        /* align-items: ; */
     }
 
     .warframeLogo {
@@ -141,23 +201,28 @@
     }
 
     .header {
+        position: relative;
         display: flex;
         background-color: #1e2124;
-        width: fit-content;
+        width: 75%;
         padding: 10px;
         align-items: center;
         gap: 10px;
+        left: 50%;
+        transform: translateX(-50%);
         border-radius: 20px;
         height: fit-content;
+        margin-top: 1%;
     }
 
     section {
-        position: fixed;
-        left: 50%;
-        top: 30%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        /* left: 50%; */
+        /* top: 25%; */
+        /* transform: translateX(-50%); */
         /* margin: 200px; */
         /* padding: 20px; */
+        /* margin-top: 3%; */
     }
 
     .Port_name {
@@ -212,8 +277,6 @@
         /* Impide que el texto se ajuste a múltiples líneas */
         text-overflow: ellipsis;
     }
-
-
 
     .maestria {
         display: flex;
@@ -367,9 +430,9 @@
     }
 
     body {
-        margin: auto;
+        /* margin: auto; */
         /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
-        overflow: auto;
+        /* overflow: auto; */
         background: linear-gradient(315deg, rgb(101, 15, 95) 3%, rgb(125, 18, 52) 38%, rgb(66, 29, 72) 68%, rgb(91, 41, 62) 98%);
         animation: gradient 15s ease infinite;
         background-size: 400% 400%;
@@ -437,6 +500,93 @@
             transform: translateX(1);
         }
     }
+
+    .portafolio {
+        color: #fff;
+        background-color: #1e2124;
+        border-radius: 20px;
+        display: block;
+        padding: 10px;
+        /* margin-top: 10px; */
+        width: 70%;
+        height: 50%;
+        /* margin-bottom: 10px ; */
+        text-align: justify;
+        overflow: auto;
+    }
+
+    .sidebard {
+        color: #fff;
+        background-color: #1e2124;
+        border-radius: 20px;
+        display: grid;
+        padding: 10px;
+        /* margin-top: 10px; */
+        justify-content: center;
+        height: fit-content;
+        width: 30%;
+
+        /* position: absolute; */
+    }
+
+    .sidebard h3 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .audio-player {
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        /* margin-top: 10px; */
+        justify-content: center;
+    }
+
+    .play-btn,
+    .pause-btn {
+        background-color: #7289da;
+        color: white;
+        border: none;
+        /* padding: 10px; */
+        border-radius: 5px;
+        cursor: pointer;
+        width: min-content;
+        height: min-content;
+        transition: all .05s ease-in-out .05s;
+    }
+
+    .play-btn:hover,
+    .pause-btn:hover {
+        background-color: #333e66;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #ddd;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .progress {
+        height: 100%;
+        background-color: #7289da;
+        width: 0;
+        border-radius: 5px;
+    }
 </style>
 
 <script>
@@ -455,4 +605,39 @@
     function instagramLink() {
         window.open("https://www.instagram.com/brskst?igsh=dmtkYmtlMDlya3Rp", "_blank");
     }
+</script>
+
+<script>
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progress = document.getElementById('progress');
+
+    // Función para reproducir el audio
+    playBtn.addEventListener('click', () => {
+        audio.play();
+        playBtn.style.display = 'none';
+        pauseBtn.style.display = 'inline-block';
+    });
+
+    // Función para pausar el audio
+    pauseBtn.addEventListener('click', () => {
+        audio.pause();
+        playBtn.style.display = 'inline-block';
+        pauseBtn.style.display = 'none';
+    });
+
+    // Actualizar la barra de progreso
+    audio.addEventListener('timeupdate', () => {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = `${progressPercent}%`;
+    });
+
+    // Hacer que se pueda interactuar con la barra de progreso
+    progressBar.addEventListener('click', (e) => {
+        const clickPosition = e.offsetX;
+        const newTime = (clickPosition / progressBar.offsetWidth) * audio.duration;
+        audio.currentTime = newTime;
+    });
 </script>
