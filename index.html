@@ -20,14 +20,13 @@
 
 <body>
 
-    <audio id="myAudio" autoplay loop >
-        <source src="warframe.mp3" type="audio/mp3">
+    <audio  src="warframe.mp3" id="myAudio" autoplay loop >
       </audio>
       
       <!-- <button onclick="document.getElementById('myAudio').play()">Reproducir Audio</button> -->
       
       <script>
-        window.onload = function() {
+        window.onbeforeunload  = function() {
           var audio = document.getElementById('myAudio');
           audio.play().catch(function(error) {
             console.log("El autoplay ha sido bloqueado por el navegador: " + error);
