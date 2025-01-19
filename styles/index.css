@@ -1,0 +1,395 @@
+body {
+    /* background-color: #ff4500; */
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    font-family: 'DelaGothicOne-Regular', sans-serif;
+    /* overflow-y: scroll; */
+}
+
+/* Chrome, Edge, and Safari */
+.portafolio::-webkit-scrollbar {
+    width: 0px;
+}
+
+.portafolio::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.portafolio::-webkit-scrollbar-thumb {
+    background-color: #8f54a0;
+    border-radius: 10px;
+    border: 6px solid #ffffff;
+}
+
+.mainp {
+    display: block;
+    overflow: visible;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: yellow; */
+}
+
+.iniciodeport {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    /* background-color: red; */
+    height: 100%;
+    margin-bottom: 20px;
+    /* align-items: ; */
+}
+
+.warframeLogo {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-image: url('../imgs/wlogo.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: text-bottom;
+    margin-right: 8px;
+    /* filter: invert(100%) sepia(50%) saturate(1%); */
+    /* padding: 5px; */
+    /* margin: 5px; */
+    transition: all .3s ease;
+}
+
+@font-face {
+    font-family: "DelaGothicOne-Regular";
+    src: url('../fonts/DelaGothicOne-Regular.ttf');
+    font-weight: normal;
+    /* Opcional, solo si es necesario */
+    font-style: normal;
+}
+
+.img_cont {
+    min-width: 150px;
+    min-height: 150px;
+    position: relative;
+    background-image: url('../imgs/desvelada.png');
+    /* Imagen inicial */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.1s ease-in-out;
+    border-radius: 15px;
+}
+
+.img_cont:hover {
+    background-image: url('../imgs/braulio.jpg');
+    /* border-radius: 15px; */
+    /* Imagen que se muestra al pasar el mouse */
+}
+
+.header {
+    position: relative;
+    display: flex;
+    background-color: #1e2124;
+    width: 70%;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    min-height: 30%;
+    margin-top: 1%;
+}
+
+section {
+    position: relative;
+    /* left: 50%; */
+    /* top: 25%; */
+    /* transform: translateX(-50%); */
+    /* margin: 200px; */
+    /* padding: 20px; */
+    /* margin-top: 3%; */
+}
+
+.Port_name {
+    display: flex;
+    flex-direction: column;
+    align-self: self-start;
+    /* background-color: #424549; */
+    width: fit-content;
+    /* padding: 10px; */
+    color: #fff;
+    border-radius: 10px;
+    gap: 5px;
+    /* align-items:normal; */
+}
+
+.headerN {
+    font-size: 24px;
+    transition: all .1s ease-in;
+    background-color: #424549;
+    /* margin: 5px; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.headerN:hover {
+    color: #7289da;
+}
+
+.subN {
+    font-size: 10px;
+    color: #858585;
+    background-color: #424549;
+    padding: 5px;
+    border-radius: 5px;
+    /* margin: 10px; */
+}
+
+.descN {
+    padding-top: 20px;
+    background-color: #424549;
+    padding: 5px;
+    border-radius: 5px;
+    /* margin: 5px; */
+    /* word-break:break-; */
+    height: fit-content;
+    min-width: 10px;
+    /* Define el ancho del contenedor */
+    overflow: hidden;
+    /* Oculta el contenido que se desborda */
+    /* white-space: ; */
+    white-space: collapse;
+    /* Impide que el texto se ajuste a múltiples líneas */
+    text-overflow: ellipsis;
+}
+
+.maestria {
+    display: flex;
+    /* vertical-align: auto; */
+    /* position: ; */
+    /* vertical-align: top; */
+    background-color: #424549;
+    /* margin: 5px; */
+    padding: 5px;
+    transition: all .5s ease;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.Port_name p {
+    margin: 0;
+    /* padding: 0; */
+    font-size: 14px;
+}
+
+.maestria:hover {
+    font-size: 20px;
+    color: #ff6600;
+    /* Color base de la llama */
+    font-weight: 100;
+    /* text-align: center; */
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    /* position: relative; */
+
+    animation: flicker 1.5s infinite alternate;
+    text-shadow:
+        0 0 5px #ff6600,
+        0 0 10px #ff6600,
+        0 0 15px #ff6600,
+        0 0 20px #ff4500,
+        0 0 30px #ff4500,
+        0 0 40px #ff4500,
+        0 0 50px #ff4500;
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow:
+            0 0 5px #ff6600,
+            0 0 10px #ff6600,
+            0 0 15px #ff6600,
+            0 0 20px #ff4500,
+            0 0 30px #ff4500,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500;
+    }
+
+    50% {
+        text-shadow:
+            0 0 2px #ff6600,
+            0 0 5px #ff6600,
+            0 0 10px #ff6600,
+            0 0 15px #ff4500,
+            0 0 25px #ff4500,
+            0 0 35px #ff4500,
+            0 0 45px #ff4500;
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #ff6600,
+            0 0 10px #ff6600,
+            0 0 15px #ff6600,
+            0 0 20px #ff4500,
+            0 0 30px #ff4500,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500;
+    }
+}
+
+.neon-image:hover {
+    /* width: 400px; */
+    /* height: auto; */
+    transform: scale(1.5);
+    border-radius: 10px;
+    filter: drop-shadow(0 0 10px #ff6600) drop-shadow(0 0 20px #ff6600) drop-shadow(0 0 30px #ff4500);
+    animation: flicker2 1.5s infinite alternate;
+    z-index: 1;
+}
+
+.warframeLogo:hover {
+    cursor: pointer;
+}
+
+@keyframes flicker2 {
+    0% {
+        filter:
+            drop-shadow(0 0 5px #ff6600) drop-shadow(0 0 10px #ff6600)
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 3px #ff6600) drop-shadow(0 0 8px #ff6600)
+    }
+
+    100% {
+        filter:
+            drop-shadow(0 0 5px #ff6600) drop-shadow(0 0 10px #ff6600)
+    }
+}
+
+.socials {
+    background-color: #7289da;
+    margin: 0px;
+    padding: 5px;
+    /* padding: 10px; */
+    border-radius: 10px;
+    height: 100%;
+
+    /* display: block; */
+
+    /* position: a; */
+    /* display:; */
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    /* justify-content: baseline; */
+    flex-direction: column;
+    /* justify-items: end; */
+    /* list-style-position: inside; */
+    align-items: center;
+}
+
+.icon {
+    font-size: 25px;
+    color: rgb(250, 248, 255);
+    display: flex;
+    padding: 5px;
+    /* text-align: justify; */
+    /* justify-self: flex-end; */
+    /* align-items: self-end; */
+    /* background-color: white; */
+    transition: all .3s ease-out .1s;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    color: #373f5d;
+}
+
+body {
+    /* margin: auto; */
+    /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+    /* overflow: auto; */
+    /* filter: blur(10px); */
+    background: linear-gradient(315deg, rgb(101, 15, 95) 3%, rgb(125, 18, 52) 38%, rgb(66, 29, 72) 68%, rgb(91, 41, 62) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}

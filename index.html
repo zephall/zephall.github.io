@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/index.css">
+
+    <script src="scripts/audio.js" defer></script>
+    <script src="scripts/socials.js" defer></script>
 
     <script src="https://kit.fontawesome.com/d6ae4653be.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -40,6 +44,9 @@
                 <li>
                     <i onclick="instagramLink()" class="icon fa-brands fa-square-instagram"></i>
                 </li>
+                <li>
+                    <i onclick="twitchlink()" class="icon fa-brands fa-twitch"></i>
+                </li>
             </ul>
             <div class="img_cont">
             </div>
@@ -62,7 +69,6 @@
                 <div class="audio-player">
                     <h3>El soundtrack de mi vida</h3>
                     <audio id="audio" src="warframe.mp3"></audio>
-
                     <div class="controls">
                         <button class="play-btn" id="playBtn"><i class="fa-solid fa-play"></i></button>
                         <button class="pause-btn" id="pauseBtn" style="display:none;"><i
@@ -72,48 +78,14 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="portafolio">
 
-                <div class="card mb-3">
-                    <h3 class="card-header">Card header</h3>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200"
-                        aria-label="Placeholder: Image cap" focusable="false" role="img"
-                        preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180"
-                        style="font-size:1.125rem;text-anchor:middle">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                    </svg>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        2 days ago
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
+                <div>
+                    <span>Titulo</span>
+                    <p>Descripcion</p>
+                    <img src="" alt="imagen">
                 </div>
 
             </div>
@@ -124,412 +96,21 @@
 </html>
 
 <style>
-    body {
-        /* background-color: #ff4500; */
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        overflow: hidden;
-        font-family: 'fuente', sans-serif;
-        /* overflow-y: scroll; */
-    }
-
-    /* Chrome, Edge, and Safari */
-    .portafolio::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    .portafolio::-webkit-scrollbar-track {
-        background: #ffffff;
-    }
-
-    .portafolio::-webkit-scrollbar-thumb {
-        background-color: #8f54a0;
-        border-radius: 10px;
-        border: 6px solid #ffffff;
-    }
-
-    .mainp {
-        display: block;
-        overflow: visible;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        /* background-color: yellow; */
-    }
-
-    .iniciodeport {
-        position: absolute;
-        display: flex;
-        gap: 5px;
-        margin-top: 10px;
-        width: 70%;
-        left: 50%;
-        transform: translateX(-50%);
-        justify-content: center;
-        /* background-color: red; */
-        height: 100%;
-        margin-bottom: 20px;
-        /* align-items: ; */
-    }
-
-    .warframeLogo {
-        display: inline-block;
-        width: 50px;
-        height: 30px;
-        background-image: url('imgs/wlogo.png');
-        background-size: 50px;
-        background-repeat: no-repeat;
-        background-position: center;
-        vertical-align: text-bottom;
-        margin-right: 8px;
-        /* filter: invert(100%) sepia(50%) saturate(1%); */
-        /* padding: 5px; */
-        /* margin: 5px; */
-        transition: all .3s ease;
-    }
-
-    @font-face {
-        font-family: "fuente";
-        src: url('/fonts/DelaGothicOne-Regular.ttf');
-        font-weight: normal;
-        /* Opcional, solo si es necesario */
-        font-style: normal;
-    }
-
-    .img_cont {
-        min-width: 150px;
-        min-height: 150px;
-        position: relative;
-        background-image: url('../imgs/desvelada.png');
-        /* Imagen inicial */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: background-image 0.1s ease-in-out;
-        border-radius: 15px;
-    }
-
-    .img_cont:hover {
-        background-image: url('../imgs/braulio.jpg');
-        /* border-radius: 15px; */
-        /* Imagen que se muestra al pasar el mouse */
-    }
-
-    .header {
-        position: relative;
-        display: flex;
-        background-color: #1e2124;
-        width: 70%;
-        padding: 10px;
-        align-items: center;
-        gap: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 20px;
-        height: fit-content;
-        margin-top: 2%;
-    }
-
-    section {
-        position: relative;
-        /* left: 50%; */
-        /* top: 25%; */
-        /* transform: translateX(-50%); */
-        /* margin: 200px; */
-        /* padding: 20px; */
-        /* margin-top: 3%; */
-    }
-
-    .Port_name {
-        display: flex;
-        flex-direction: column;
-        align-self: self-start;
-        /* background-color: #424549; */
-        width: fit-content;
-        /* padding: 10px; */
-        color: #fff;
-        border-radius: 10px;
-        gap: 5px;
-        /* align-items:normal; */
-    }
-
-    .headerN {
-        font-size: 24px;
-        transition: all .1s ease-in;
-        background-color: #424549;
-        /* margin: 5px; */
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    .headerN:hover {
-        color: #7289da;
-    }
-
-    .subN {
-        font-size: 10px;
-        color: #858585;
-        background-color: #424549;
-        padding: 5px;
-        border-radius: 5px;
-        /* margin: 10px; */
-    }
-
-    .descN {
-        padding-top: 20px;
-        background-color: #424549;
-        padding: 5px;
-        border-radius: 5px;
-        /* margin: 5px; */
-        /* word-break:break-; */
-        height: fit-content;
-        min-width: 10px;
-        /* Define el ancho del contenedor */
-        overflow: hidden;
-        /* Oculta el contenido que se desborda */
-        /* white-space: ; */
-        white-space: collapse;
-        /* Impide que el texto se ajuste a múltiples líneas */
-        text-overflow: ellipsis;
-    }
-
-    .maestria {
-        display: flex;
-        /* vertical-align: auto; */
-        /* position: ; */
-        /* vertical-align: top; */
-        background-color: #424549;
-        /* margin: 5px; */
-        padding: 5px;
-        transition: all .5s ease;
-        border-radius: 5px;
-        align-items: center;
-    }
-
-    .Port_name p {
-        margin: 0;
-        /* padding: 0; */
-        font-size: 14px;
-    }
-
-    .maestria:hover {
-        font-size: 20px;
-        color: #ff6600;
-        /* Color base de la llama */
-        font-weight: 100;
-        /* text-align: center; */
-        /* text-transform: uppercase; */
-        letter-spacing: 2px;
-        /* position: relative; */
-
-        animation: flicker 1.5s infinite alternate;
-        text-shadow:
-            0 0 5px #ff6600,
-            0 0 10px #ff6600,
-            0 0 15px #ff6600,
-            0 0 20px #ff4500,
-            0 0 30px #ff4500,
-            0 0 40px #ff4500,
-            0 0 50px #ff4500;
-    }
-
-    @keyframes flicker {
-        0% {
-            text-shadow:
-                0 0 5px #ff6600,
-                0 0 10px #ff6600,
-                0 0 15px #ff6600,
-                0 0 20px #ff4500,
-                0 0 30px #ff4500,
-                0 0 40px #ff4500,
-                0 0 50px #ff4500;
-        }
-
-        50% {
-            text-shadow:
-                0 0 2px #ff6600,
-                0 0 5px #ff6600,
-                0 0 10px #ff6600,
-                0 0 15px #ff4500,
-                0 0 25px #ff4500,
-                0 0 35px #ff4500,
-                0 0 45px #ff4500;
-        }
-
-        100% {
-            text-shadow:
-                0 0 5px #ff6600,
-                0 0 10px #ff6600,
-                0 0 15px #ff6600,
-                0 0 20px #ff4500,
-                0 0 30px #ff4500,
-                0 0 40px #ff4500,
-                0 0 50px #ff4500;
-        }
-    }
-
-    .neon-image:hover {
-        /* width: 400px; */
-        /* height: auto; */
-        transform: scale(1.5);
-        border-radius: 10px;
-        filter: drop-shadow(0 0 10px #ff6600) drop-shadow(0 0 20px #ff6600) drop-shadow(0 0 30px #ff4500);
-        animation: flicker2 1.5s infinite alternate;
-        z-index: 1;
-    }
-
-    .warframeLogo:hover {
-        cursor: pointer;
-    }
-
-    @keyframes flicker2 {
-        0% {
-            filter:
-                drop-shadow(0 0 5px #ff6600) drop-shadow(0 0 10px #ff6600)
-        }
-
-        50% {
-            filter:
-                drop-shadow(0 0 3px #ff6600) drop-shadow(0 0 8px #ff6600)
-        }
-
-        100% {
-            filter:
-                drop-shadow(0 0 5px #ff6600) drop-shadow(0 0 10px #ff6600)
-        }
-    }
-
-    .socials {
-        background-color: #7289da;
-        margin: 0px;
-        padding: 5px;
-        /* padding: 10px; */
-        border-radius: 10px;
-        height: 100%;
-
-        /* display: block; */
-
-        /* position: a; */
-        /* display:; */
-    }
-
-    ul {
-        list-style: none;
-        text-decoration: none;
-        margin: 0;
-        display: flex;
-        padding: 0;
-        /* justify-content: baseline; */
-        flex-direction: column;
-        /* justify-items: end; */
-        /* list-style-position: inside; */
-        align-items: center;
-    }
-
-    .icon {
-        font-size: 25px;
-        color: rgb(250, 248, 255);
-        display: flex;
-        padding: 5px;
-        /* text-align: justify; */
-        /* justify-self: flex-end; */
-        /* align-items: self-end; */
-        /* background-color: white; */
-        transition: all .3s ease-out .1s;
-    }
-
-    .icon:hover {
-        cursor: pointer;
-        transform: scale(1.5);
-        color: #373f5d;
-    }
-
-    body {
-        /* margin: auto; */
-        /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
-        /* overflow: auto; */
-        background: linear-gradient(315deg, rgb(101, 15, 95) 3%, rgb(125, 18, 52) 38%, rgb(66, 29, 72) 68%, rgb(91, 41, 62) 98%);
-        animation: gradient 15s ease infinite;
-        background-size: 400% 400%;
-        background-attachment: fixed;
-    }
-
-    @keyframes gradient {
-        0% {
-            background-position: 0% 0%;
-        }
-
-        50% {
-            background-position: 100% 100%;
-        }
-
-        100% {
-            background-position: 0% 0%;
-        }
-    }
-
-    .wave {
-        background: rgb(255 255 255 / 25%);
-        border-radius: 1000% 1000% 0 0;
-        position: fixed;
-        width: 200%;
-        height: 12em;
-        animation: wave 10s -3s linear infinite;
-        transform: translate3d(0, 0, 0);
-        opacity: 0.8;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-    }
-
-    .wave:nth-of-type(2) {
-        bottom: -1.25em;
-        animation: wave 18s linear reverse infinite;
-        opacity: 0.8;
-    }
-
-    .wave:nth-of-type(3) {
-        bottom: -2.5em;
-        animation: wave 20s -1s reverse infinite;
-        opacity: 0.9;
-    }
-
-    @keyframes wave {
-        2% {
-            transform: translateX(1);
-        }
-
-        25% {
-            transform: translateX(-25%);
-        }
-
-        50% {
-            transform: translateX(-50%);
-        }
-
-        75% {
-            transform: translateX(-25%);
-        }
-
-        100% {
-            transform: translateX(1);
-        }
-    }
-
     .portafolio {
+        border-top: solid 5px;
+        border-top-color: #1e2124;
+        border-bottom: solid 5px;
+        border-bottom-color: #1e2124;
         /* position:fixed; */
         color: #fff;
         background-color: #1e2124;
-        border-radius: 20px;
+        border-radius: 10px;
         display: grid;
-        padding: 10px;
+        padding: 5px;
         /* margin-top: 10px; */
         width: 70%;
-        height: 65%;
-        margin-bottom: 1% ;
+        height: 60%;
+        margin-bottom: 1%;
         text-align: justify;
         overflow: auto;
     }
@@ -537,12 +118,12 @@
     .sidebard {
         color: #fff;
         background-color: #1e2124;
-        border-radius: 20px;
+        border-radius: 10px;
         display: flex;
         padding: 10px;
         /* margin-top: 10px; */
         justify-content: center;
-        height: 65%;
+        height: 60%;
         width: 30%;
 
         /* position: absolute; */
@@ -564,7 +145,7 @@
         flex-direction: column;
         align-items: center;
         height: fit-content;
-        border-left: solid 5px ;
+        border-left: solid 5px;
         border-left-color: #7289da;
     }
 
@@ -613,56 +194,3 @@
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
 </style>
-
-<script>
-    function warframePerfil() {
-        window.open("https://steamcommunity.com/id/Zephal_", "_blank");
-    }
-    function youtubeLink() {
-        window.open("https://www.youtube.com/@Zephal_", "_blank");
-    }
-    function discordLink() {
-        window.open("https://discord.com/invite/ZHe4BpCjZw", "_blank");
-    }
-    function tiktokLink() {
-        window.open("https://www.tiktok.com/@brskst27", "_blank");
-    }
-    function instagramLink() {
-        window.open("https://www.instagram.com/brskst?igsh=dmtkYmtlMDlya3Rp", "_blank");
-    }
-</script>
-
-<script>
-    const audio = document.getElementById('audio');
-    const playBtn = document.getElementById('playBtn');
-    const pauseBtn = document.getElementById('pauseBtn');
-    const progressBar = document.getElementById('progressBar');
-    const progress = document.getElementById('progress');
-
-    // Función para reproducir el audio
-    playBtn.addEventListener('click', () => {
-        audio.play();
-        playBtn.style.display = 'none';
-        pauseBtn.style.display = 'inline-block';
-    });
-
-    // Función para pausar el audio
-    pauseBtn.addEventListener('click', () => {
-        audio.pause();
-        playBtn.style.display = 'inline-block';
-        pauseBtn.style.display = 'none';
-    });
-
-    // Actualizar la barra de progreso
-    audio.addEventListener('timeupdate', () => {
-        const progressPercent = (audio.currentTime / audio.duration) * 100;
-        progress.style.width = `${progressPercent}%`;
-    });
-
-    // Hacer que se pueda interactuar con la barra de progreso
-    progressBar.addEventListener('click', (e) => {
-        const clickPosition = e.offsetX;
-        const newTime = (clickPosition / progressBar.offsetWidth) * audio.duration;
-        audio.currentTime = newTime;
-    });
-</script>
