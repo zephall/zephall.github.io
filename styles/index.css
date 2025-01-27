@@ -84,6 +84,8 @@ body {
     background-position: center;
     transition: background-image 0.1s ease-in-out;
     border-radius: 15px;
+    justify-self: center;
+    align-self: center;
 }
 
 .img_cont:hover {
@@ -121,7 +123,7 @@ section {
 .Port_name {
     display: flex;
     flex-direction: column;
-    align-self: self-start;
+    align-self: center;
     /* background-color: #424549; */
     width: fit-content;
     /* padding: 10px; */
@@ -282,8 +284,8 @@ section {
 .socials {
     background-color: #7289da;
     margin: 0px;
-    padding: 5px;
-    /* padding: 10px; */
+    padding: 0px;
+    padding: 2px;
     border-radius: 10px;
     height: 100%;
 
@@ -301,9 +303,10 @@ ul {
     padding: 0;
     /* justify-content: baseline; */
     flex-direction: column;
-    /* justify-items: end; */
+    justify-items: center;
     /* list-style-position: inside; */
     align-items: center;
+    /* gap: 5px; */
 }
 
 .icon {
@@ -315,13 +318,36 @@ ul {
     /* justify-self: flex-end; */
     /* align-items: self-end; */
     /* background-color: white; */
-    transition: all .3s ease-out .1s;
+    transition: all .3s ease .1s;
+}
+
+.icon2 {
+    font-size: 20px;
+    color: rgb(250, 248, 255);
+    display: flex;
+    padding: 0px;
+    margin: 5px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    /* background-color: white; */
+    transition: all .3s ease .1s;
 }
 
 .icon:hover {
     cursor: pointer;
+    transform: scale(1.5)rotate(360deg);
+    color: #2a2d51;
+    justify-items: center;
+    align-items: center;
+}
+
+.icon2:hover {
+    cursor: pointer;
     transform: scale(1.5);
-    color: #373f5d;
+    color: #2a2d51;
+    justify-items: center;
+    align-items: center;
 }
 
 body {

@@ -58,7 +58,7 @@
                     videos
                     para youtube y otras cosas aburridas </p>
                 <p class="maestria neon"> <i onclick="warframePerfil()" class="warframeLogo neon-image"></i>
-                    Maestria 8 </p>
+                    Maestria 9 </p>
             </div>
 
         </header>
@@ -79,22 +79,61 @@
                     </div>
                 </div>
 
-                <ul>
+                <ul class="categoriasport">
                     <li>
-                        <span>
-                            Dibujos
-                        </span>
+                        <button><i class="icon2 fa-solid fa-palette"></i> DIBUJOS</button>
                     </li>
                     <li>
                         <span>
                             Programacion
-                            <span>JavaScript</span>
-                            <span>C#</span>
-                            <span>c++</span>
-                            <span>Html</span>
                         </span>
+                        <button><i class="icon2 fa-brands fa-js"></i> JavaScript</button>
+                        <button><i class="icon2 fa-solid fa-code"></i> C#</button>
+                        <button><i class="icon2 fa-solid fa-terminal"></i> c++</button>
+                        <button><i class="icon2 fa-brands fa-html5"></i> Html</button>
                     </li>
                 </ul>
+
+                <style>
+                    .categoriasport {
+                        display: flex;
+                        width: 100%;
+                        background-color: #424549;
+                        /* align-self: center; */
+                        justify-self: center;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        margin-top: 10px;
+                        /* border-radius: 1; */
+                        /* margin: 5px; */
+                        padding: 5px;
+                        /* gap:10px; */
+                        height: min-content;
+                    }
+
+                    .categoriasport li {
+                        display: grid;
+                        /* background-color: #7289da; */
+                        /* width: min-content; */
+                        /* justify-items: center; */
+                        /* justify-self: center; */
+                        /* margin: 5px; */
+                        /* padding: 5px; */
+                        font-weight: lighter;
+                    }
+
+                    .categoriasport li button {
+                        display: flex;
+                        color: #fff;
+                        /* background-color: none; */
+                        align-items: center;
+                        background-color: #566dc0;
+                        border: solid 2px #333e66;
+                        border-radius: 10px;
+                        /* width: 100%; */
+                    }
+
+                </style>
 
             </div>
             <div class="portafolio">
@@ -133,16 +172,15 @@
     }
 
     .sidebard {
+        /* display: flex; */
+        height: 60%;
+        width: 30%;
         color: #fff;
         background-color: #1e2124;
         border-radius: 10px;
-        /* display: flex; */
         padding: 10px;
         /* margin-top: 10px; */
-        justify-content: center;
-        height: 60%;
-        width: 30%;
-
+        justify-items: center;
         /* position: absolute; */
     }
 
